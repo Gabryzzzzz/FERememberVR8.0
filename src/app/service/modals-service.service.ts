@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmDialogComponent } from '../component/modals/confirm-dialog/confirm-dialog.component';
+import { SuccessDialogComponent } from '../component/modals/success-dialog/success-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ModalsServiceService {
   }
 
   dialogSuccess(messaggio: string) {
-    let modal  = this.modalService.open(ConfirmDialogComponent, { centered: true });
+    let modal  = this.modalService.open(SuccessDialogComponent, { centered: true });
     modal.componentInstance.messaggio = messaggio;
     return modal.closed
   }
