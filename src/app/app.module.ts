@@ -13,6 +13,8 @@ import { AddUserComponent } from './component/add-user/add-user.component';
 import { SafeUrlPipe } from './pipe/safe-url.pipe';
 import { ConfirmDialogComponent } from './component/modals/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from './component/modals/success-dialog/success-dialog.component';
+import { AddVideosComponent } from './component/modals/add-videos/add-videos.component';
+import { ViewCodeComponent } from './component/modals/view-code/view-code.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SuccessDialogComponent } from './component/modals/success-dialog/succes
     AddUserComponent,
     SafeUrlPipe,
     ConfirmDialogComponent,
-    SuccessDialogComponent
+    SuccessDialogComponent,
+    AddVideosComponent,
+    ViewCodeComponent
   ],
   imports: [
     BrowserModule,

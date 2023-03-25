@@ -1,1 +1,46 @@
-<p>add-user works!</p>
+<div class="card" style="height: 400px;">
+  <div class="card-header">
+   <h2>
+    Lista utenti
+   </h2>
+  </div>
+  <div class="card-body" style="overflow: auto;">
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Email</th>
+              <th scope="col">Azioni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <th >{{user.email}}</th>
+              <td>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="pl-2">
+                      <button class="btn btn-primary pl-2" ngbTooltip="Viusualizza codice" (click)="viewCode(user.code)"><i class="bi bi-eye"></i></button>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="pl-2">
+                      <button class="btn btn-primary pl-2" ngbTooltip="Invia email"><i class="bi bi-send"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-success" >Aggiungi</button>
+  </div>

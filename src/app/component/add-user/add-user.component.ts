@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalsServiceService } from 'src/app/service/modals-service.service';
 
 @Component({
   selector: 'app-add-user',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-user.component.less']
 })
 export class AddUserComponent {
+
+  constructor(public modalService: ModalsServiceService) { }
+
+  public users: any[] = [
+    {
+      email: 'mattia.schettini@we-plus.eu',
+      code: '552255'
+    }
+  ]
+
+  viewCode(code: string){
+    this.modalService.viewCode(code).subscribe();
+  }
 
 }
