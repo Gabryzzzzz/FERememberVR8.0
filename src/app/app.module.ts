@@ -8,6 +8,11 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { MainPageComponent } from './component/main-page/main-page.component';
 import { RegistrationPageComponent } from './component/registration-page/registration-page.component';
 import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
+import { AddVideoComponent } from './component/add-video/add-video.component';
+import { AddUserComponent } from './component/add-user/add-user.component';
+import { SafeUrlPipe } from './pipe/safe-url.pipe';
+import { ConfirmDialogComponent } from './component/modals/confirm-dialog/confirm-dialog.component';
+import { SuccessDialogComponent } from './component/modals/success-dialog/success-dialog.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { SidebarComponent } from './main-layout/sidebar/sidebar.component';
     LoginPageComponent,
     MainPageComponent,
     RegistrationPageComponent,
-    SidebarComponent
+    SidebarComponent,
+    AddVideoComponent,
+    AddUserComponent,
+    SafeUrlPipe,
+    ConfirmDialogComponent,
+    SuccessDialogComponent
   ],
   imports: [
     BrowserModule,

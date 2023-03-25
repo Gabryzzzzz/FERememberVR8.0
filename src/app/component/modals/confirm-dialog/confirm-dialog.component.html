@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h4 class="modal-title">Rimuovi video</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismiss()"></button>
+</div>
+<div class="modal-body">
+  <p>Sei sicuro di voler rimuovere il video?</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="modalService.close(true)">Si</button>
+  <button type="button" class="btn btn-danger" (click)="modalService.close(false)">No</button>
+</div>

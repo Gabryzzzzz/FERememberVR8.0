@@ -13,8 +13,6 @@ export class AppComponent {
   constructor(public _authService: AuthenticateService, public _router: Router) { }
 
 
-  seeNavBar(): boolean {
-    return this._authService.isLogged() && this._router.url != '/login' && this._router.url != '/registration';
-  }
+
 
 }

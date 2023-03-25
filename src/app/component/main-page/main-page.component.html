@@ -1,1 +1,9 @@
-<p>main-page works!</p>
+<app-sidebar *ngIf="seeNavBar()"></app-sidebar>
+<div class="row" style="padding-top: 10%;">
+  <div class="col-6">
+    <app-add-video></app-add-video>
+  </div>
+  <div class="col-6">
+    <app-add-user></app-add-user>
+  </div>
+</div>
