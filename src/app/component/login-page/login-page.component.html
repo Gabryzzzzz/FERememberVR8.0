@@ -1,1 +1,41 @@
-<p>login-page works!</p>
+<div class="d-flex justify-content-center align-content-center mt-5">
+  <div class="card w-50">
+    <div class="card-body">
+      <h4>Accedi</h4>
+      <div class="d-flex flex-column">
+        <div class="mb-3">
+          <label for="email_user" class="form-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="email_user"
+            id="email_user"
+            aria-describedby="email_help"
+            placeholder="Email"
+          />
+          <small id="email_help" class="form-text text-muted"
+            >Inserisci la email del tuo profilo</small
+          >
+        </div>
+        <div class="mb-3">
+          <label for="password_user" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password_user"
+            id="password_user"
+            aria-describedby="password_help"
+            placeholder="Password"
+          />
+          <small id="password_help" class="form-text text-muted"
+            >Inserisci la password del tuo profilo.</small
+          >
+        </div>
+        <div class="d-flex justify-content-end gap-2 align-items-center flex-wrap">
+          <a href="#" class="text-primary align-bottom" [routerLink]="['/registration']">Registrati qua</a>
+          <button type="button" class="btn btn-primary" (click)="accedi()">Accedi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center align-content-center mt-5">
+  <div class="card w-50">
+    <div class="card-body">
+      <h4>Registrati</h4>
+      <div class="d-flex flex-column">
+        <div class="mb-3">
+          <label for="nome_user" class="form-label">Nome</label>
+          <input type="text"
+            class="form-control" name="nome_user" id="nome_user" aria-describedby="nome_help" placeholder="Nome">
+          <small id="nome_help" class="form-text text-muted">Inserisci il tuo nome</small>
+        </div>
+        <div class="mb-3">
+          <label for="cognome_user" class="form-label">Cognome</label>
+          <input type="text"
+            class="form-control" name="cognome_user" id="cognome_user" aria-describedby="cognome_helper" placeholder="Cognome">
+          <small id="cognome_helper" class="form-text text-muted">Inserisci il tuo cognome</small>
+        </div>
+        <div class="mb-3">
+          <label for="email_user" class="form-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="email_user"
+            id="email_user"
+            aria-describedby="email_help"
+            placeholder="Email"
+          />
+          <small id="email_help" class="form-text text-muted"
+            >Inserisci la email del tuo profilo</small
+          >
+        </div>
+        <div class="mb-3">
+          <label for="password_user" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password_user"
+            id="password_user"
+            aria-describedby="password_help"
+            placeholder="Password"
+          />
+          <small id="password_help" class="form-text text-muted"
+            >Inserisci la password del tuo profilo.</small
+          >
+          <div class="mb-3">
+            <label for="password_user" class="form-label">Ripeti password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password_user"
+              id="password_user"
+              aria-describedby="password_help"
+              placeholder="Password"
+            />
+            <small id="password_help" class="form-text text-muted"
+              >Ripeti la password del tuo profilo.</small
+            >
+        </div>
+        <div class="d-flex justify-content-end gap-2 align-items-center flex-wrap">
+          <a href="#" class="text-primary align-bottom" [routerLink]="['/login']">Accedi qua</a>
+          <button type="button" class="btn btn-primary" (click)="registrati()">Registrati</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
