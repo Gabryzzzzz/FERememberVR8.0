@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title">Inserisci un nuovo utente</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismiss()"></button>
+  </div>
+  <div class="modal-body text-center">
+       <div class="col-12">
+        <label for="">Email</label>
+        <input type="email" placeholder="Email" [(ngModel)]="utente.email" >
+      </div>
+      <div class="col-12">
+        <label for="">Codice</label>
+        <p>{{utente.code}}</p>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="sendUser()">Aggiungi</button>
+    <button type="button" class="btn btn-danger" (click)="modalService.close(false)">Chiudi</button>
+  </div>
+  

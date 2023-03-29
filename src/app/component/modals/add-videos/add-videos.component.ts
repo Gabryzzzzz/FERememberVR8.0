@@ -31,7 +31,6 @@ export class AddVideosComponent {
   }
 
   sendVideoToBE(){
-    debugger
     this.modalService.close(this.url);
   }
 

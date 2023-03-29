@@ -15,6 +15,8 @@ import { ConfirmDialogComponent } from './component/modals/confirm-dialog/confir
 import { SuccessDialogComponent } from './component/modals/success-dialog/success-dialog.component';
 import { AddVideosComponent } from './component/modals/add-videos/add-videos.component';
 import { ViewCodeComponent } from './component/modals/view-code/view-code.component';
+import { AddUsersComponent } from './component/modals/add-users/add-users.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { ViewCodeComponent } from './component/modals/view-code/view-code.compon
     ConfirmDialogComponent,
     SuccessDialogComponent,
     AddVideosComponent,
-    ViewCodeComponent
+    ViewCodeComponent,
+    AddUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

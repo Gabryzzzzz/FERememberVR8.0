@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddUsersComponent } from '../component/modals/add-users/add-users.component';
 import { AddVideosComponent } from '../component/modals/add-videos/add-videos.component';
 import { ConfirmDialogComponent } from '../component/modals/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from '../component/modals/success-dialog/success-dialog.component';
@@ -26,6 +27,11 @@ export class ModalsServiceService {
   viewCode(messaggio: string) {
     let modal  = this.modalService.open(ViewCodeComponent, { centered: true });
     modal.componentInstance.messaggio = messaggio;
+    return modal.closed
+  }
+
+  addUser() {
+    let modal  = this.modalService.open(AddUsersComponent, { centered: true, size: 'lg'});
     return modal.closed
   }
 

@@ -21,4 +21,12 @@ export class AddUserComponent {
     this.modalService.viewCode(code).subscribe();
   }
 
+  addUser(){
+    this.modalService.addUser().subscribe(x=> {
+      if(x!= false){
+        this.users.push(x)
+      }
+    })
+  }
+
 }
