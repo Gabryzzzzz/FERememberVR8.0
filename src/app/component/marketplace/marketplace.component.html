@@ -1,0 +1,47 @@
+
+<div style="padding-top: 4.7rem;">
+    <div class="text-center">
+        <h1>
+            Acquista i personaggi preferiti
+        </h1>
+    </div>
+    <div class="pt-3 row">
+        <div *ngFor="let prodotto of prodottiArray"  class="col pt-3">
+            <div class="card ">
+                <div class="card-header text-center">
+                   <h1>
+                       {{prodotto.nome}}
+                   </h1>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <h3>
+                                Descrizione:
+                            </h3>
+                            <label for="">{{prodotto.descrizione}}</label>
+                        </div>
+                        <div class="col-12 pt-3">
+                            <img src="{{prodotto.immagine}}" width="520px" height="400px" alt="test">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>
+                                Prezzo: {{prodotto.prezzo | currency: 'EUR'}}
+
+                            </h4>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary">
+                                Acquista
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,6 +17,8 @@ import { AddVideosComponent } from './component/modals/add-videos/add-videos.com
 import { ViewCodeComponent } from './component/modals/view-code/view-code.component';
 import { AddUsersComponent } from './component/modals/add-users/add-users.component';
 import { FormsModule } from '@angular/forms';
+import { MarketplaceComponent } from './component/marketplace/marketplace.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { FormsModule } from '@angular/forms';
     SuccessDialogComponent,
     AddVideosComponent,
     ViewCodeComponent,
-    AddUsersComponent
+    AddUsersComponent,
+    MarketplaceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

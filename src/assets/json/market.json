@@ -1,0 +1,22 @@
+{
+    "prodotti": [
+      {
+        "nome": "Martin Luther King Jr.",
+        "descrizione": "Discorso I have a dream a washington",
+        "prezzo": 1.99,
+        "immagine": "https://images2.corriereobjects.it/methode_image/2020/08/28/Interni/Foto%20Interni%20-%20Trattate/WCCOR1_0HRL835F-ksUE-U32002253011885UbG-656x492@Corriere-Web-Sezioni.JPG?v=20200828093427"
+      },
+      {
+        "nome": "Coscienza obama",
+        "descrizione": "Coscienza integrale di obama",
+        "prezzo": 29.99,
+        "immagine": "https://www.ilbullone.org/wp-content/uploads/2021/03/library-of-congress-WYmjDP_8kMU-unsplash_Fotor.jpg"
+      },
+      {
+        "nome": "Video repertorio live aid",
+        "descrizione": "Video di repertorio riguardante il concerto live aid tenuto il 13 luglio 1985",
+        "prezzo": 29.99,
+        "immagine": "https://cdn.gelestatic.it/capital/sites/2/2020/07/live_aid_1985_stage-1200x627.jpg"
+      }
+    ]
+  }
