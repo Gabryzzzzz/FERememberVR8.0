@@ -1,0 +1,64 @@
+<div class="modal-header">
+    <h4 class="modal-title">Inserisci un nuovo utente</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>
+                        Prodotto
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-check">
+                            <label class="form-check-label pr-2" for="flexRadioDisabled" style="font-weight: 700;">
+                                Prodotto:
+                            </label>
+                            {{prodottiAcquistati.nome}}
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label pr-2" for="flexRadioDisabled" style="font-weight: 700;">
+                                Desrcrizione:
+                            </label>
+                            {{prodottiAcquistati.descrizione}}
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label pr-2" for="flexRadioDisabled" style="font-weight: 700;">
+                                Prezzo:
+                            </label>
+                            {{prodottiAcquistati.prezzo  | currency: 'EUR'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          PayPal
+                        </label>
+                        <i class="bi bi-paypal"></i>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Carta di credito
+                        </label>
+                        <i class="bi bi-credit-card"></i>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="acquista()">Acquista</button>
+    <button type="button" class="btn btn-danger" (click)="modalService.close(false)">Chiudi</button>
+  </div>
+  

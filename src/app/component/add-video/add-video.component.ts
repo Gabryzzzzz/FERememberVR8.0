@@ -60,7 +60,6 @@ export class AddVideoComponent implements OnInit {
   addVideo(){
     this.modalService.addVideo().subscribe(x=> {
       if(x != undefined){
-        debugger
         this.safeVideoList.push(this.sanitizer.bypassSecurityTrustResourceUrl(x))
       }
     })

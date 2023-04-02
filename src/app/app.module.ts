@@ -19,6 +19,8 @@ import { AddUsersComponent } from './component/modals/add-users/add-users.compon
 import { FormsModule } from '@angular/forms';
 import { MarketplaceComponent } from './component/marketplace/marketplace.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AcquistoModalComponent } from './component/modals/acquisto-modal/acquisto-modal.component';
+import { IMieiProdottiComponent } from './component/i-miei-prodotti/i-miei-prodotti.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     AddVideosComponent,
     ViewCodeComponent,
     AddUsersComponent,
-    MarketplaceComponent
+    MarketplaceComponent,
+    AcquistoModalComponent,
+    IMieiProdottiComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { MainPageComponent } from './component/main-page/main-page.component';
 import { MarketplaceComponent } from './component/marketplace/marketplace.component';
 import { RegistrationPageComponent } from './component/registration-page/registration-page.component';
 import { AuthGuard } from './services/auth.guard';
+import { IMieiProdottiComponent } from './component/i-miei-prodotti/i-miei-prodotti.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path: 'market', component: MarketplaceComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'mieiProdotti', component: IMieiProdottiComponent, canActivate:[AuthGuard]
   }
 ];
 

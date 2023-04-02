@@ -5,6 +5,7 @@ import { AddVideosComponent } from '../component/modals/add-videos/add-videos.co
 import { ConfirmDialogComponent } from '../component/modals/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from '../component/modals/success-dialog/success-dialog.component';
 import { ViewCodeComponent } from '../component/modals/view-code/view-code.component';
+import { AcquistoModalComponent } from '../component/modals/acquisto-modal/acquisto-modal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,13 @@ export class ModalsServiceService {
 
   addVideo() {
     let modal  = this.modalService.open(AddVideosComponent, { centered: true, size: 'lg'});
+    return modal.closed
+  }
+
+  acquistaProdotto(acquisto: any){
+    let modal = this.modalService.open(AcquistoModalComponent, {centered: true, size: 'lg'});
+    modal.componentInstance.prodottiAcquistati = acquisto;
+
     return modal.closed
   }
 }

@@ -1,0 +1,11 @@
+{
+    "prodotti": [
+      {
+        "id": 2,
+        "nome": "Coscienza obama",
+        "descrizione": "Coscienza integrale di obama",
+        "prezzo": 29.99,
+        "immagine": "https://www.ilbullone.org/wp-content/uploads/2021/03/library-of-congress-WYmjDP_8kMU-unsplash_Fotor.jpg"
+      }
+    ]
+  }

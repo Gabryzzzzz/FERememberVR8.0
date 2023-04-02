@@ -18,7 +18,8 @@ export class SidebarComponent implements OnInit {
   }
 
   home_url = "/home"
-  profile_url = "/profile"
+  shopUrl = '/market'
+  prodottiAcquistati = "/mieiProdotti"
 
   constructor(public router: Router) {}
 
