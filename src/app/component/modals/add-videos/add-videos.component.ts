@@ -14,6 +14,7 @@ export class AddVideosComponent {
   videoSanitized: SafeResourceUrl| undefined = undefined;
   url: any;
   format: any;
+  name: any;
   loadVideo(event: any){
     const file = event.target.files && event.target.files[0];
     if (file) {
@@ -27,11 +28,16 @@ export class AddVideosComponent {
       reader.onload = (event) => {
         this.url = (<FileReader>event.target).result;
       }
+      this.name = file.name
     }
   }
 
   sendVideoToBE(){
-    this.modalService.close(this.url);
+    var obj = {
+      name:this.name,
+      "base64": this.url
+    }
+    this.modalService.close(obj);
   }
 
 }

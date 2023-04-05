@@ -9,9 +9,11 @@
     <div class="row">
       <div class="col-12 pt-3" *ngFor="let singleVideo of safeVideoList; let i = index">
           <div class="embed-responsive embed-responsive-16by9 pt-2">
-            <iframe class="embed-responsive-item" style="width: 100%;"  [src]="singleVideo" height="300" allowfullscreen></iframe>
+            <video class="embed-responsive-item" style="width: 100%;"  [src]="singleVideo.base64" height="300" allowfullscreen  controls >
+              <source src="{{singleVideo.base64}}" type="video/mp4">
+             </video>
           </div>
-          <div class="btn btn-danger" (click)="removeVideo(i)">Rimuovi video</div>
+          <div class="btn btn-danger" (click)="removeVideo(singleVideo.name)">Rimuovi video</div>
 
       </div>
     </div>

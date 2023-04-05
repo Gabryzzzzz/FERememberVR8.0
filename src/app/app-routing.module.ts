@@ -22,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'mieiProdotti', component: IMieiProdottiComponent, canActivate:[AuthGuard]
-  }
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

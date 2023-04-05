@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ModalsServiceService } from 'src/app/service/modals-service.service';
@@ -24,19 +25,38 @@ export class AddVideoComponent implements OnInit {
     }
   ]
 
-  public safeVideoList: SafeResourceUrl[] = [];
-  constructor(public sanitizer: DomSanitizer, public modalService: ModalsServiceService) { }
+  public safeVideoList: any[] = [];
+  constructor(public sanitizer: DomSanitizer, public modalService: ModalsServiceService, public http:HttpClient ) { }
   ngOnInit(){
-    this.videoList.forEach(video => {
-      this.safeVideoList.push(this.sanitizer.bypassSecurityTrustResourceUrl(video.urlVideo));
-    });
+    this.safeVideoList = []
+    this.http.get("https://localhost:7054/Video/GetAllFileInfo").subscribe((x: any)=>{
+      x.forEach((video:any) => {
+        let url = 'data:video/mp4;base64,'+video.base64
+        
+        this.safeVideoList.push({
+          "name": video.name,
+          "base64": url
+        });
+      });
+    }, (error)=>{
+      this.videoList.forEach(video => {
+        this.safeVideoList.push(this.sanitizer.bypassSecurityTrustResourceUrl(video.urlVideo));
+      });
+    })
+
   }
 
   removeVideo(index: number){
     this.modalService.confimDialog().subscribe(x=> {
+      
       if(x){
+        this.http.delete('https://localhost:7054/Video/Delete?name='+index).subscribe(x=>{
+          if(x){
+            this.ngOnInit()
+            this.modalService.dialogSuccess("Video eliminmato con successo")
+          }
+        })
         this.safeVideoList.splice(index, 1);
-        this.modalService.dialogSuccess("Video eliminmato con successo")
       }
     })
 
@@ -60,7 +80,12 @@ export class AddVideoComponent implements OnInit {
   addVideo(){
     this.modalService.addVideo().subscribe(x=> {
       if(x != undefined){
-        this.safeVideoList.push(this.sanitizer.bypassSecurityTrustResourceUrl(x))
+        
+        this.http.post("https://localhost:7054/Video/CreateByBase64", x).subscribe(t=>{
+          if(t){
+            this.safeVideoList.push(x)
+          }
+        })
       }
     })
 
