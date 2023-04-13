@@ -7,7 +7,7 @@
     </div>
     <div class="pt-3 row">
         <div *ngFor="let prodotto of prodottiArray"  class="col-xl-4 col-12 pt-3">
-            <div class="card ">
+            <div class="card " style="height: 100%;">
                 <div class="card-header text-center">
                    <h1>
                        {{prodotto.nome}}
@@ -22,7 +22,7 @@
                             <label for="">{{prodotto.descrizione}}</label>
                         </div>
                         <div class="col-12 pt-3">
-                            <img src="{{prodotto.immagine}}" width="520px" height="400px" alt="test">
+                            <img style="width: '90%'; height:'90%'" src="{{prodotto.immagine}}" alt="test">
                         </div>
                     </div>
                 </div>
