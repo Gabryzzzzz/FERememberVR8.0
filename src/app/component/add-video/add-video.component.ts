@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ModalsServiceService } from 'src/app/service/modals-service.service';
-
+import { enviroment } from 'src/assets/enviroment';
 @Component({
   selector: 'app-add-video',
   templateUrl: './add-video.component.html',
@@ -29,10 +29,10 @@ export class AddVideoComponent implements OnInit {
   constructor(public sanitizer: DomSanitizer, public modalService: ModalsServiceService, public http:HttpClient ) { }
   ngOnInit(){
     this.safeVideoList = []
-    this.http.get("https://localhost:7054/Video/GetAllFileInfo").subscribe((x: any)=>{
+    this.http.get(enviroment.env + "Video/GetAllFileInfo").subscribe((x: any)=>{
       x.forEach((video:any) => {
         let url = 'data:video/mp4;base64,'+video.base64
-        
+
         this.safeVideoList.push({
           "name": video.name,
           "base64": url
@@ -48,9 +48,9 @@ export class AddVideoComponent implements OnInit {
 
   removeVideo(index: number){
     this.modalService.confimDialog().subscribe(x=> {
-      
+
       if(x){
-        this.http.delete('https://localhost:7054/Video/Delete?name='+index).subscribe(x=>{
+        this.http.delete(enviroment.env + 'Video/Delete?name='+index).subscribe(x=>{
           if(x){
             this.ngOnInit()
             this.modalService.dialogSuccess("Video eliminmato con successo")
@@ -80,8 +80,8 @@ export class AddVideoComponent implements OnInit {
   addVideo(){
     this.modalService.addVideo().subscribe(x=> {
       if(x != undefined){
-        
-        this.http.post("https://localhost:7054/Video/CreateByBase64", x).subscribe(t=>{
+
+        this.http.post(enviroment.env + "Video/CreateByBase64", x).subscribe(t=>{
           if(t){
             this.safeVideoList.push(x)
           }
