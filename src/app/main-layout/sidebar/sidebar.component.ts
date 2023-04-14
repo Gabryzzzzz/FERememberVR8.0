@@ -24,4 +24,23 @@ export class SidebarComponent implements OnInit {
   constructor(public router: Router) {}
 
   ngOnInit(): void {}
+
+  downloadCose(){
+    let link = document.createElement('a');
+    link.setAttribute('type', 'hidden');
+    link.href = 'assets/pdf/marketing.pdf';
+    link.download = "marketing.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    let link2 = document.createElement('a');
+    link2.setAttribute('type', 'hidden');
+    link2.href = 'assets/pdf/documentazione.pdf';
+    link2.download = "documentazione.pdf";
+    document.body.appendChild(link);
+    link2.click();
+    link2.remove();
+  }
+  
 }
