@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     public _http: HttpClient) { }
 
   ngOnInit(): void {
-    this._http.get('https://localhost:7054/Video/GetAllNames').subscribe(x=> console.log(x))
+    this._http.get('http://localhost:5088/Video/GetAllNames').subscribe(x=> console.log(x))
   }
 
   seeNavBar(): boolean {
