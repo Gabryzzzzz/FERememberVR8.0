@@ -1,5 +1,5 @@
 export const enviroment ={
-    env: "http://192.168.1.34:5000/",
+    env: "http://localhost:5088/",
 }
 
 const urls = {
